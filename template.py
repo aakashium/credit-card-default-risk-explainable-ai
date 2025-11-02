@@ -13,11 +13,15 @@ list_of_files = [
     # GitHub workflow
     ".github/workflows/.gitkeep",
 
+    # Logs
+    "logs/preprocessing.log"
+
     # Source code structure
-    f"src/{project_name}/__init__.py",
-    f"src/{project_name}/data_preprocessing.py",
-    f"src/{project_name}/model_training.py",
-    f"src/{project_name}/explainability.py",
+    f"src/__init__.py",
+    f"src/data_preprocessing.py",
+    f"src/model_training.py",
+    f"src/explainability.py",
+    f"src/logger_config.py",
 
     # Main execution file
     "main.py",
