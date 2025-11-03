@@ -19,14 +19,6 @@ logger = setup_logger("model_training_logger", "logs/model_training.log")
 def apply_random_undersampling(X: pd.DataFrame, y: pd.Series, random_state: int = 42):
     """
     Balances the dataset using RandomUnderSampler from imblearn.
-
-    Args:
-        X (pd.DataFrame): Feature set.
-        y (pd.Series): Target variable.
-        random_state (int, optional): Seed for reproducibility. Defaults to 42.
-
-    Returns:
-        tuple: (X_resampled, y_resampled) - balanced features and target.
     """
     logger.info("Applying random undersampling...")
     rus = RandomUnderSampler(random_state=random_state)
@@ -38,35 +30,26 @@ def apply_random_undersampling(X: pd.DataFrame, y: pd.Series, random_state: int 
 # Model Training Function
 
 def train_model(
-    train_path: str,
-    test_path: str,
-    target_col: str,
+    TRAIN_PATH: str,
+    TEST_PATH: str,
+    TARGET_COL: str,
     model_save_path: str = "./models/trained_model.joblib"
 ):
     """
     Loads preprocessed train/test CSVs, applies random undersampling,
     trains a classifier, evaluates it, and saves the model.
-
-    Args:
-        train_path (str): Path to the preprocessed training CSV file.
-        test_path (str): Path to the preprocessed test CSV file.
-        target_col (str): Target column name.
-        model_save_path (str, optional): Output path for saving the trained model.
-
-    Returns:
-        XGBClassifier: Trained XGBoost model.
     """
     try:
         # 1. Load data
         logger.info("Loading preprocessed data...")
-        train_df = pd.read_csv(train_path)
-        test_df = pd.read_csv(test_path)
+        train_df = pd.read_csv(TRAIN_PATH)
+        test_df = pd.read_csv(TEST_PATH)
         logger.info(f"Loaded {len(train_df)} training samples and {len(test_df)} testing samples.")
 
-        X_train = train_df.drop(columns=[target_col])
-        y_train = train_df[target_col]
-        X_test = test_df.drop(columns=[target_col])
-        y_test = test_df[target_col]
+        X_train = train_df.drop(columns=[TARGET_COL])
+        y_train = train_df[TARGET_COL]
+        X_test = test_df.drop(columns=[TARGET_COL])
+        y_test = test_df[TARGET_COL]
 
         logger.info(f"Class distribution before undersampling: {y_train.value_counts().to_dict()}")
 
@@ -101,14 +84,21 @@ def train_model(
         f1 = f1_score(y_test, y_pred)
         auc = roc_auc_score(y_test, y_pred_proba)
 
-        logger.info(f"Evaluation Results → Accuracy: {acc:.4f}, Recall: {rec:.4f}, F1: {f1:.4f}, ROC-AUC: {auc:.4f}")
+        metrics = {
+        "Accuracy": float(acc),
+        "Recall": float(rec),
+        "F1 Score": float(f1),
+        "ROC-AUC": float(auc)
+        }
+
+        logger.info(f"Evaluation Results: {metrics}")
 
         # 6. Save model
         os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
         dump(model, model_save_path)
         logger.info(f"Model saved successfully at: {model_save_path}")
 
-        return model
+        return model, metrics
 
     except Exception as e:
         logger.exception(f"Error during model training: {str(e)}")

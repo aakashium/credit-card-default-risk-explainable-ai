@@ -11,3 +11,15 @@
 2025-11-03 20:15:27,262 — __main__ — INFO — Preprocessor created successfully.
 2025-11-03 20:15:28,362 — __main__ — INFO — Preprocessed data saved successfully.
 2025-11-03 20:15:28,409 — __main__ — INFO — Preprocessor saved as models/preprocessor.pkl
+2025-11-04 01:11:43,738 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30001, 25)
+2025-11-04 01:11:43,745 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 01:11:43,746 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 01:11:43,746 — src.data_preprocessing — ERROR — Target column 'DEFAULT' not found after cleanup.
+2025-11-04 01:11:43,746 — src.data_preprocessing — ERROR — Error during preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 154, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.

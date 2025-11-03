@@ -23,10 +23,10 @@ list_of_files = [
     "src/data_preprocessing.py",
     "src/model_training.py",
     "src/explainability.py",
-    "src/logger_config.py",
+    
+    # Logger config
+    "logger_config.py",
 
-    # Main execution file
-    "main.py",
 
     # Data directories
     "data/raw/.gitkeep",
@@ -53,7 +53,7 @@ list_of_files = [
     "notebooks/03_explainability.ipynb",
 
     # Streamlit app
-    "app/app.py",
+    "app.py",
 ]
 
 # Create directories and files
