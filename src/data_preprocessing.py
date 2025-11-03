@@ -89,6 +89,19 @@ if __name__ == "__main__":
         target_col = 'DEFAULT'
         logger.info(f"Dataset loaded: {data.shape}")
 
+        # Conditional cleanup and renaming 
+        if 'ID' in data.columns:
+            data = data.drop('ID', axis=1)
+            logger.info("'ID' column found and removed.")
+
+        if 'default payment next month' in data.columns:
+            data.rename(columns={'default payment next month': 'DEFAULT'}, inplace=True)
+            logger.info("Target column renamed: 'default payment next month' → 'DEFAULT'")
+
+        target_col = 'DEFAULT'
+        if target_col not in data.columns:
+            raise ValueError(f"Target column '{target_col}' not found in dataset after renaming.")
+
         # Split data
         X_train, X_test, y_train, y_test = split_data(data, target_col)
         logger.info(f"Target distribution (train): {y_train.value_counts().to_dict()}")
