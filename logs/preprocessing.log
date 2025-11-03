@@ -4,3 +4,10 @@
 2025-11-02 16:25:13,447 — __main__ — INFO — Preprocessor created successfully.
 2025-11-02 16:25:14,555 — __main__ — INFO — Preprocessed data saved successfully.
 2025-11-02 16:25:14,574 — __main__ — INFO — Preprocessor saved as models/preprocessor.pkl
+2025-11-03 20:15:26,959 — __main__ — INFO — Dataset loaded: (30000, 24)
+2025-11-03 20:15:27,010 — __main__ — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-03 20:15:27,234 — __main__ — INFO — Train and test splits saved successfully in data/processed/
+2025-11-03 20:15:27,246 — __main__ — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-03 20:15:27,262 — __main__ — INFO — Preprocessor created successfully.
+2025-11-03 20:15:28,362 — __main__ — INFO — Preprocessed data saved successfully.
+2025-11-03 20:15:28,409 — __main__ — INFO — Preprocessor saved as models/preprocessor.pkl

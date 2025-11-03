@@ -1,0 +1,24 @@
+2025-11-03 20:39:38,676 — explainability_logger — INFO — Starting Explainability Pipeline
+2025-11-03 20:39:38,676 — explainability_logger — INFO — Loading trained model and test data...
+2025-11-03 20:39:38,847 — explainability_logger — INFO — Data loaded successfully: 6000 samples, 23 features.
+2025-11-03 20:39:38,847 — explainability_logger — INFO — Initializing SHAP explainability...
+2025-11-03 21:07:28,998 — explainability_logger — INFO — SHAP values generated successfully.
+2025-11-03 21:07:29,000 — explainability_logger — INFO — Generating global SHAP plots...
+2025-11-03 21:07:31,031 — explainability_logger — INFO — Saved SHAP bar plot: ./reports/figures\shap_feature_importance_bar.png
+2025-11-03 21:07:33,513 — explainability_logger — INFO — Saved SHAP summary plot: ./reports/figures\shap_summary_plot.png
+2025-11-03 21:07:33,515 — explainability_logger — INFO — Generating local SHAP explanations for sample index 10...
+2025-11-03 21:07:53,765 — explainability_logger — INFO — Saved local SHAP force plot: ./reports/figures\shap_local_force_10.png
+2025-11-03 21:07:54,464 — explainability_logger — INFO — Saved local SHAP waterfall plot: ./reports/figures\shap_local_waterfall_10.png
+2025-11-03 21:07:54,465 — explainability_logger — INFO — Generating SHAP dependence plots...
+2025-11-03 21:07:54,466 — explainability_logger — INFO — Creating dependence plot for feature: PAY_2
+2025-11-03 21:07:55,359 — explainability_logger — INFO — Saved dependence plot for feature PAY_2: ./reports/figures\shap_dependence_PAY_2.png
+2025-11-03 21:07:55,361 — explainability_logger — INFO — Creating dependence plot for feature: PAY_4
+2025-11-03 21:07:56,183 — explainability_logger — INFO — Saved dependence plot for feature PAY_4: ./reports/figures\shap_dependence_PAY_4.png
+2025-11-03 21:07:56,184 — explainability_logger — INFO — Creating dependence plot for feature: LIMIT_BAL
+2025-11-03 21:07:57,051 — explainability_logger — INFO — Saved dependence plot for feature LIMIT_BAL: ./reports/figures\shap_dependence_LIMIT_BAL.png
+2025-11-03 21:07:57,051 — explainability_logger — INFO — Creating dependence plot for feature: EDUCATION
+2025-11-03 21:07:57,888 — explainability_logger — INFO — Saved dependence plot for feature EDUCATION: ./reports/figures\shap_dependence_EDUCATION.png
+2025-11-03 21:07:57,889 — explainability_logger — INFO — Creating dependence plot for feature: PAY_AMT1
+2025-11-03 21:07:58,705 — explainability_logger — INFO — Saved dependence plot for feature PAY_AMT1: ./reports/figures\shap_dependence_PAY_AMT1.png
+2025-11-03 21:07:58,706 — explainability_logger — INFO — Explainability analysis completed successfully!
+2025-11-03 21:07:58,706 — explainability_logger — INFO — Explainability Pipeline Finished

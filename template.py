@@ -15,13 +15,15 @@ list_of_files = [
 
     # Logs
     "logs/preprocessing.log"
+    "logs/model_training.log"
+
 
     # Source code structure
-    f"src/__init__.py",
-    f"src/data_preprocessing.py",
-    f"src/model_training.py",
-    f"src/explainability.py",
-    f"src/logger_config.py",
+    "src/__init__.py",
+    "src/data_preprocessing.py",
+    "src/model_training.py",
+    "src/explainability.py",
+    "src/logger_config.py",
 
     # Main execution file
     "main.py",

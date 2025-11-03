@@ -2,7 +2,6 @@
 model_training.py
 Train and evaluate a classification model using Random Undersampling and XGBoost.
 """
-
 # Imports
 import os
 import pandas as pd
@@ -14,7 +13,6 @@ from logger_config import setup_logger
 
 # Initialize logger
 logger = setup_logger("model_training_logger", "logs/model_training.log")
-
 
 # Random Underscoring Function
 
