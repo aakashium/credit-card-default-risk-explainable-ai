@@ -1,0 +1,163 @@
+2025-11-04 01:11:43,753 — app_logger — ERROR — Error in data preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 154, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:19:38,722 — app_logger — ERROR — Error in data preprocessing: Target column 'default' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 161, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 47, in clean_and_rename_columns
+    raise ValueError("Target column 'default' not found after renaming.")
+ValueError: Target column 'default' not found after renaming.
+2025-11-04 01:20:57,251 — app_logger — ERROR — Error in data preprocessing: Target column 'default' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 161, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 47, in clean_and_rename_columns
+    raise ValueError("Target column 'default' not found after renaming.")
+ValueError: Target column 'default' not found after renaming.
+2025-11-04 01:26:39,495 — app_logger — ERROR — Error in data preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:35:48,274 — app_logger — ERROR — Error in data preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:37:54,269 — app_logger — ERROR — Error in data preprocessing: 'NoneType' object has no attribute 'columns'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 32, in clean_and_rename_columns
+    if 'default payment next month' in data.columns:
+                                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'columns'
+2025-11-04 01:39:58,771 — app_logger — ERROR — Error in data preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:42:47,335 — app_logger — ERROR — Error in data preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:50:29,227 — app_logger — ERROR — Error in data preprocessing: Target column 'default' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 45, in <module>
+    run_data_preprocessing()
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 154, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'default' not found after renaming.")
+ValueError: Target column 'default' not found after renaming.
+2025-11-04 01:58:27,163 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 01:58:35,488 — app_logger — ERROR — Error in model training: train_model() missing 3 required positional arguments: 'train_path', 'test_path', and 'target_col'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 61, in <module>
+    metrics = train_model()
+              ^^^^^^^^^^^^^
+TypeError: train_model() missing 3 required positional arguments: 'train_path', 'test_path', and 'target_col'
+2025-11-04 02:03:18,587 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:03:22,465 — app_logger — ERROR — Error in model training: train_model() missing 3 required positional arguments: 'TRAIN_PATH', 'TEST_PATH', and 'TARGET_COL'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 61, in <module>
+    metrics = train_model()
+              ^^^^^^^^^^^^^
+TypeError: train_model() missing 3 required positional arguments: 'TRAIN_PATH', 'TEST_PATH', and 'TARGET_COL'
+2025-11-04 02:06:33,042 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:06:36,809 — app_logger — ERROR — Error in model training: name 'train_path' is not defined
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 61, in <module>
+    metrics = train_model(TRAIN_PATH = "./data/processed/train_preprocessed.csv",
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\model_training.py", line 45, in train_model
+    train_df = pd.read_csv(train_path)
+                           ^^^^^^^^^^
+NameError: name 'train_path' is not defined
+2025-11-04 02:08:40,216 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:08:43,278 — app_logger — ERROR — Error in model training: train_model() missing 3 required positional arguments: 'TRAIN_PATH', 'TEST_PATH', and 'TARGET_COL'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 61, in <module>
+    metrics = train_model()
+              ^^^^^^^^^^^^^
+TypeError: train_model() missing 3 required positional arguments: 'TRAIN_PATH', 'TEST_PATH', and 'TARGET_COL'
+2025-11-04 02:12:13,085 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:12:16,264 — app_logger — ERROR — Error in model training: train_model() missing 3 required positional arguments: 'TRAIN_PATH', 'TEST_PATH', and 'TARGET_COL'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 64, in <module>
+    metrics = train_model()
+              ^^^^^^^^^^^^^
+TypeError: train_model() missing 3 required positional arguments: 'TRAIN_PATH', 'TEST_PATH', and 'TARGET_COL'
+2025-11-04 02:13:08,379 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:13:11,904 — app_logger — ERROR — Error in model training: name 'target_col' is not defined
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 64, in <module>
+    metrics = train_model(TRAIN_PATH, TEST_PATH, TARGET_COL)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\model_training.py", line 49, in train_model
+    X_train = train_df.drop(columns=[target_col])
+                                     ^^^^^^^^^^
+NameError: name 'target_col' is not defined
+2025-11-04 02:14:36,764 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:14:40,240 — app_logger — ERROR — Error in model training: name 'target_col' is not defined
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 64, in <module>
+    metrics = train_model(TRAIN_PATH, TEST_PATH, TARGET_COL)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\model_training.py", line 50, in train_model
+    y_train = train_df[target_col]
+                       ^^^^^^^^^^
+NameError: name 'target_col' is not defined
+2025-11-04 02:15:22,716 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:15:27,737 — app_logger — INFO — Model training executed successfully.
+2025-11-04 02:24:44,292 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:24:51,254 — app_logger — ERROR — Error in model training: cannot unpack non-iterable XGBClassifier object
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\app.py", line 64, in <module>
+    model, metrics = train_model(TRAIN_PATH, TEST_PATH, TARGET_COL)
+    ^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable XGBClassifier object
+2025-11-04 02:25:55,508 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 02:26:01,284 — app_logger — INFO — Model training executed successfully.
+2025-11-04 03:08:28,060 — app_logger — INFO — Explainability analysis executed successfully.
+2025-11-04 03:12:23,296 — app_logger — INFO — Data preprocessing executed successfully.
+2025-11-04 03:12:29,226 — app_logger — INFO — Model training executed successfully.

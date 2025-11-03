@@ -23,3 +23,202 @@ Traceback (most recent call last):
   File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
     raise ValueError("Target column 'DEFAULT' not found after renaming.")
 ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:19:38,670 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30001, 25)
+2025-11-04 01:19:38,671 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 01:19:38,718 — src.data_preprocessing — ERROR — Target column 'default' not found after cleanup.
+2025-11-04 01:19:38,719 — src.data_preprocessing — ERROR — Error during preprocessing: Target column 'default' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 161, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 47, in clean_and_rename_columns
+    raise ValueError("Target column 'default' not found after renaming.")
+ValueError: Target column 'default' not found after renaming.
+2025-11-04 01:20:57,247 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30001, 25)
+2025-11-04 01:20:57,247 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 01:20:57,248 — src.data_preprocessing — ERROR — Target column 'default' not found after cleanup.
+2025-11-04 01:20:57,248 — src.data_preprocessing — ERROR — Error during preprocessing: Target column 'default' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 161, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 47, in clean_and_rename_columns
+    raise ValueError("Target column 'default' not found after renaming.")
+ValueError: Target column 'default' not found after renaming.
+2025-11-04 01:26:39,490 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30001, 25)
+2025-11-04 01:26:39,491 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 01:26:39,491 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 01:26:39,492 — src.data_preprocessing — ERROR — Target column 'DEFAULT' not found after cleanup.
+2025-11-04 01:26:39,492 — src.data_preprocessing — ERROR — Error during preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:35:48,127 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 25)
+2025-11-04 01:35:48,197 — src.data_preprocessing — INFO — 'ID' column found and removed.
+2025-11-04 01:35:48,270 — src.data_preprocessing — ERROR — Error during preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:37:54,258 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 25)
+2025-11-04 01:37:54,258 — src.data_preprocessing — INFO — 'ID' column found and removed.
+2025-11-04 01:37:54,258 — src.data_preprocessing — ERROR — Error during preprocessing: 'NoneType' object has no attribute 'columns'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 32, in clean_and_rename_columns
+    if 'default payment next month' in data.columns:
+                                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'columns'
+2025-11-04 01:39:58,756 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 25)
+2025-11-04 01:39:58,756 — src.data_preprocessing — INFO — 'ID' column found and removed.
+2025-11-04 01:39:58,771 — src.data_preprocessing — ERROR — Error during preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:42:47,331 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (29999, 24)
+2025-11-04 01:42:47,331 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 01:42:47,331 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 01:42:47,331 — src.data_preprocessing — ERROR — Target column 'DEFAULT' not found after cleanup.
+2025-11-04 01:42:47,331 — src.data_preprocessing — ERROR — Error during preprocessing: Target column 'DEFAULT' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 153, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'DEFAULT' not found after renaming.")
+ValueError: Target column 'DEFAULT' not found after renaming.
+2025-11-04 01:50:29,221 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (29999, 24)
+2025-11-04 01:50:29,222 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 01:50:29,222 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 01:50:29,223 — src.data_preprocessing — ERROR — Target column 'default' not found after cleanup.
+2025-11-04 01:50:29,223 — src.data_preprocessing — ERROR — Error during preprocessing: Target column 'default' not found after renaming.
+Traceback (most recent call last):
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 154, in run_data_preprocessing
+    data = clean_and_rename_columns(data, logger)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Desktop\Work\Project\Explainable-credit-risk-prediction\src\data_preprocessing.py", line 40, in clean_and_rename_columns
+    raise ValueError("Target column 'default' not found after renaming.")
+ValueError: Target column 'default' not found after renaming.
+2025-11-04 01:58:25,713 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 01:58:25,713 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 01:58:25,713 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 01:58:25,713 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 01:58:25,819 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 01:58:25,827 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 01:58:25,847 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 01:58:27,079 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 01:58:27,158 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 01:58:27,159 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:03:17,400 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:03:17,400 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:03:17,400 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:03:17,400 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:03:17,422 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:03:17,430 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:03:17,442 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:03:18,577 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:03:18,581 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:03:18,582 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:06:31,908 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:06:31,908 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:06:31,908 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:06:31,908 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:06:31,935 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:06:31,938 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:06:31,948 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:06:33,033 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:06:33,038 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:06:33,038 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:08:39,003 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:08:39,003 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:08:39,003 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:08:39,008 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:08:39,036 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:08:39,038 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:08:39,046 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:08:40,198 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:08:40,208 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:08:40,208 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:12:10,760 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:12:10,763 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:12:10,763 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:12:10,763 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:12:10,786 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:12:10,791 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:12:10,805 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:12:13,073 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:12:13,077 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:12:13,081 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:13:07,162 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:13:07,162 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:13:07,162 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:13:07,172 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:13:07,194 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:13:07,196 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:13:07,210 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:13:08,362 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:13:08,372 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:13:08,372 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:14:35,228 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:14:35,228 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:14:35,228 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:14:35,228 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:14:35,263 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:14:35,268 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:14:35,283 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:14:36,753 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:14:36,755 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:14:36,755 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:15:21,232 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:15:21,233 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:15:21,233 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:15:21,233 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:15:21,268 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:15:21,269 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:15:21,277 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:15:22,697 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:15:22,707 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:15:22,707 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:24:43,027 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:24:43,027 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:24:43,027 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:24:43,032 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:24:43,060 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:24:43,062 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:24:43,062 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:24:44,274 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:24:44,281 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:24:44,281 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 02:25:54,306 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 02:25:54,306 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 02:25:54,306 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 02:25:54,310 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 02:25:54,333 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 02:25:54,336 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 02:25:54,346 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 02:25:55,495 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 02:25:55,495 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 02:25:55,495 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
+2025-11-04 03:12:22,002 — src.data_preprocessing — INFO — Dataset loaded successfully with shape: (30000, 24)
+2025-11-04 03:12:22,002 — src.data_preprocessing — INFO — 'ID' column not found — skipping removal.
+2025-11-04 03:12:22,002 — src.data_preprocessing — INFO — 'default payment next month' column not found — skipping renaming.
+2025-11-04 03:12:22,002 — src.data_preprocessing — INFO — Column cleanup and renaming completed successfully.
+2025-11-04 03:12:22,042 — src.data_preprocessing — INFO — Data split completed: Train=(24000, 23), Test=(6000, 23)
+2025-11-04 03:12:22,044 — src.data_preprocessing — INFO — Target distribution (train): {0: 18691, 1: 5309}
+2025-11-04 03:12:22,056 — src.data_preprocessing — INFO — Preprocessor created successfully.
+2025-11-04 03:12:23,285 — src.data_preprocessing — INFO — Preprocessed data saved: data\processed\train_preprocessed.csv, data\processed\test_preprocessed.csv
+2025-11-04 03:12:23,285 — src.data_preprocessing — INFO — Preprocessor saved successfully at models\preprocessor.pkl
+2025-11-04 03:12:23,285 — src.data_preprocessing — INFO — Data preprocessing pipeline executed successfully.
