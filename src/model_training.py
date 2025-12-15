@@ -9,7 +9,7 @@ from imblearn.under_sampling import RandomUnderSampler
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score, recall_score, f1_score, roc_auc_score
 from joblib import dump
-from logger_config import setup_logger
+from src.utils.logger import setup_logger
 
 # Initialize logger
 logger = setup_logger("model_training_logger", "logs/model_training.log")

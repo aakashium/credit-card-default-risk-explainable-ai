@@ -1,0 +1,32 @@
+# Development Dependencies for Credit Risk Prediction Project
+
+# Testing
+pytest==8.3.4
+pytest-cov==6.0.0
+pytest-mock==3.14.0
+
+# Code Quality
+black==24.10.0
+flake8==7.1.1
+isort==5.13.2
+mypy==1.13.0
+
+# Pre-commit Hooks
+pre-commit==4.0.1
+
+# Type Stubs
+pandas-stubs==2.2.3.241126
+types-tqdm==4.67.0.20241126
+
+# Documentation
+sphinx==8.1.3
+sphinx-rtd-theme==3.0.2
+
+# Jupyter
+jupyter==1.1.1
+notebook==7.3.2
+
+# Additional Development Tools
+ipdb==0.13.13  # Debugger
+autopep8==2.3.1  # Auto-formatting
+pylint==3.3.2  # Additional linting

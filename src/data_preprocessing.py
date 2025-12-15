@@ -14,48 +14,178 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from pathlib import Path
-from logger_config import setup_logger
+from src.utils.logger import setup_logger
 
 # Initialize logger
 logger = setup_logger(__name__, log_file="logs/preprocessing.log")
 
 
 # 1 Clean and rename columns
-def clean_and_rename_columns(data, logger): 
-    """Cleans up and renames specific columns in the dataset.""" 
+def clean_and_rename_columns(data, logger):
+    """
+    Cleans up and renames specific columns in the dataset.
+    
+    This function performs the following operations:
+    1. Removes the 'ID' column if present (not needed for modeling)
+    2. Renames 'default payment next month' to 'DEFAULT' for consistency
+    3. Validates that the target column exists after renaming
+    
+    Args:
+        data (pd.DataFrame): Input DataFrame to clean and rename.
+        logger (logging.Logger): Logger instance for tracking operations.
+    
+    Returns:
+        pd.DataFrame: Cleaned DataFrame with renamed columns.
+    
+    Raises:
+        TypeError: If data is not a pandas DataFrame.
+        ValueError: If target column 'DEFAULT' is not found after renaming.
+        ValueError: If DataFrame is empty.
+    
+    Example:
+        >>> df = pd.DataFrame({
+        ...     'ID': [1, 2, 3],
+        ...     'default payment next month': [0, 1, 0],
+        ...     'LIMIT_BAL': [20000, 50000, 30000]
+        ... })
+        >>> cleaned_df = clean_and_rename_columns(df, logger)
+        >>> 'ID' in cleaned_df.columns
+        False
+        >>> 'DEFAULT' in cleaned_df.columns
+        True
+    """
+    # Input validation
+    if not isinstance(data, pd.DataFrame):
+        error_msg = f"Expected pandas DataFrame, got {type(data).__name__}"
+        logger.error(error_msg)
+        raise TypeError(error_msg)
+    
+    if data.empty:
+        error_msg = "Cannot process empty DataFrame"
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+    
+    logger.info(f"Starting column cleanup. Input shape: {data.shape}")
+    
+    # Remove ID column if present
     if 'ID' in data.columns: 
         data = data.drop('ID', axis=1) 
         logger.info("'ID' column found and removed.") 
     else: 
         logger.info("'ID' column not found — skipping removal.") 
     
+    # Rename target column
     if 'default payment next month' in data.columns: 
         data.rename(columns={'default payment next month': 'DEFAULT'}, inplace=True) 
         logger.info("Target column renamed: 'default payment next month' → 'DEFAULT'") 
     else: 
         logger.info("'default payment next month' column not found — skipping renaming.") 
-        
+    
+    # Validate target column exists
     if 'DEFAULT' not in data.columns:
-        logger.error("Target column 'default' not found after cleanup.")
-        raise ValueError("Target column 'default' not found after renaming.")
+        error_msg = (
+            "Target column 'DEFAULT' not found after cleanup. "
+            f"Available columns: {list(data.columns)}"
+        )
+        logger.error(error_msg)
+        raise ValueError(error_msg)
 
-    logger.info("Column cleanup and renaming completed successfully.")
+    logger.info(f"Column cleanup completed successfully. Output shape: {data.shape}")
     return data
 
 
 # 2 Split data into train and test
 def split_data(df, target_col, test_size=0.2, random_state=42):
+    """
+    Split dataset into training and testing sets with stratification.
+    
+    Performs stratified train-test split to maintain class distribution
+    in both sets, which is important for imbalanced datasets.
+    
+    Args:
+        df (pd.DataFrame): Input DataFrame containing features and target.
+        target_col (str): Name of the target column.
+        test_size (float, optional): Proportion of dataset for testing.
+            Must be between 0 and 1. Defaults to 0.2 (20%).
+        random_state (int, optional): Random seed for reproducibility.
+            Defaults to 42.
+    
+    Returns:
+        tuple: A tuple containing:
+            - X_train (pd.DataFrame): Training features
+            - X_test (pd.DataFrame): Testing features
+            - y_train (pd.Series): Training labels
+            - y_test (pd.Series): Testing labels
+    
+    Raises:
+        ValueError: If target_col not in DataFrame columns.
+        ValueError: If test_size is not between 0 and 1.
+        ValueError: If DataFrame has insufficient samples for splitting.
+    
+    Example:
+        >>> df = pd.DataFrame({
+        ...     'feature1': [1, 2, 3, 4, 5],
+        ...     'feature2': [5, 4, 3, 2, 1],
+        ...     'target': [0, 1, 0, 1, 0]
+        ... })
+        >>> X_train, X_test, y_train, y_test = split_data(df, 'target')
+        >>> len(X_train) + len(X_test) == len(df)
+        True
+    """
+    # Input validation
+    if not isinstance(df, pd.DataFrame):
+        error_msg = f"Expected pandas DataFrame, got {type(df).__name__}"
+        logger.error(error_msg)
+        raise TypeError(error_msg)
+    
+    if target_col not in df.columns:
+        error_msg = (
+            f"Target column '{target_col}' not found in DataFrame. "
+            f"Available columns: {list(df.columns)}"
+        )
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+    
+    if not 0 < test_size < 1:
+        error_msg = f"test_size must be between 0 and 1, got {test_size}"
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+    
+    min_samples = 10  # Minimum samples needed for meaningful split
+    if len(df) < min_samples:
+        error_msg = (
+            f"DataFrame has only {len(df)} samples. "
+            f"Need at least {min_samples} for train-test split."
+        )
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+    
+    logger.info(f"Splitting data with test_size={test_size}, random_state={random_state}")
+    
     X = df.drop(columns=[target_col])
     y = df[target_col]
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y,
-        test_size=test_size,
-        random_state=random_state,
-        stratify=y
-    )
+    try:
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y,
+            test_size=test_size,
+            random_state=random_state,
+            stratify=y
+        )
+    except ValueError as e:
+        # Stratification might fail if class has too few samples
+        logger.warning(f"Stratified split failed: {e}. Attempting non-stratified split.")
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y,
+            test_size=test_size,
+            random_state=random_state,
+            stratify=None
+        )
 
     logger.info(f"Data split completed: Train={X_train.shape}, Test={X_test.shape}")
+    logger.info(f"Train class distribution: {y_train.value_counts().to_dict()}")
+    logger.info(f"Test class distribution: {y_test.value_counts().to_dict()}")
+    
     return X_train, X_test, y_train, y_test
 
 
@@ -94,18 +224,91 @@ def create_preprocessor(X):
 
 # 4 Combine preprocessed data
 def combine_preprocessed_data(X_train_preprocessed, X_test_preprocessed, y_train, y_test, num_cols, cat_cols):
+    """
+    Combine preprocessed features with target labels into final DataFrames.
+    
+    This function:
+    1. Converts numpy arrays back to DataFrames with proper column names
+    2. Resets indices to ensure proper alignment
+    3. Concatenates features and labels
+    
+    Args:
+        X_train_preprocessed (np.ndarray): Preprocessed training features.
+        X_test_preprocessed (np.ndarray): Preprocessed testing features.
+        y_train (pd.Series): Training labels.
+        y_test (pd.Series): Testing labels.
+        num_cols (list): List of numerical column names.
+        cat_cols (list): List of categorical column names.
+    
+    Returns:
+        tuple: A tuple containing:
+            - train_final (pd.DataFrame): Training data with features and target
+            - test_final (pd.DataFrame): Testing data with features and target
+    
+    Raises:
+        ValueError: If shapes don't match between features and labels.
+        ValueError: If column names don't match array dimensions.
+    
+    Example:
+        >>> X_train = np.array([[1, 2, 3], [4, 5, 6]])
+        >>> X_test = np.array([[7, 8, 9]])
+        >>> y_train = pd.Series([0, 1])
+        >>> y_test = pd.Series([0])
+        >>> num_cols = ['A', 'B']
+        >>> cat_cols = ['C']
+        >>> train_df, test_df = combine_preprocessed_data(
+        ...     X_train, X_test, y_train, y_test, num_cols, cat_cols
+        ... )
+        >>> len(train_df) == len(y_train)
+        True
+    """
+    # Input validation
+    if len(X_train_preprocessed) != len(y_train):
+        error_msg = (
+            f"Training features ({len(X_train_preprocessed)}) and labels ({len(y_train)}) "
+            "have different lengths"
+        )
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+    
+    if len(X_test_preprocessed) != len(y_test):
+        error_msg = (
+            f"Testing features ({len(X_test_preprocessed)}) and labels ({len(y_test)}) "
+            "have different lengths"
+        )
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+    
+    # Combine column names
     all_features = np.concatenate([num_cols, cat_cols])
+    
+    # Validate column count matches
+    if X_train_preprocessed.shape[1] != len(all_features):
+        error_msg = (
+            f"Number of columns in preprocessed data ({X_train_preprocessed.shape[1]}) "
+            f"doesn't match number of feature names ({len(all_features)})"
+        )
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+    
+    logger.info("Combining preprocessed features with labels")
+    
+    # Convert to DataFrames
     X_train_preprocessed = pd.DataFrame(X_train_preprocessed, columns=all_features)
     X_test_preprocessed = pd.DataFrame(X_test_preprocessed, columns=all_features)
 
+    # Reset indices for proper concatenation
     X_train_preprocessed.reset_index(drop=True, inplace=True)
     X_test_preprocessed.reset_index(drop=True, inplace=True)
     y_train.reset_index(drop=True, inplace=True)
     y_test.reset_index(drop=True, inplace=True)
 
+    # Concatenate features and labels
     train_final = pd.concat([X_train_preprocessed, y_train], axis=1)
     test_final = pd.concat([X_test_preprocessed, y_test], axis=1)
 
+    logger.info(f"Combined data shapes - Train: {train_final.shape}, Test: {test_final.shape}")
+    
     return train_final, test_final
 
 

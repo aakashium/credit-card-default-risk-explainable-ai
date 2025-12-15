@@ -18,7 +18,7 @@ import shap
 import matplotlib.pyplot as plt
 from joblib import load as joblib_load
 from pathlib import Path
-from logger_config import setup_logger
+from src.utils.logger import setup_logger
 
 
 # Configuration

@@ -14,7 +14,7 @@ from src.data_preprocessing import run_data_preprocessing
 from src.model_training import train_model
 from src.explainability import run_explainability_pipeline
 import time
-from logger_config import setup_logger
+from src.utils.logger import setup_logger
 
 # Initialize Logger
 logger = setup_logger("app_logger", "logs/app.log")
@@ -76,35 +76,49 @@ elif page == "Model Training":
 elif page == "Explainability Analysis":
     st.header("Model Explainability")
     st.write("Generate SHAP-based explainability visuals to interpret model predictions.")
+    
+    # Initialize session state
     if "explainability_ran" not in st.session_state:
         st.session_state.explainability_ran = False
+    
+    # Show button if analysis hasn't been run
     if not st.session_state.explainability_ran:
         if st.button("Run Explainability Analysis", type="primary"):
-            st.session_state.explainability_ran = True
-        else:
-            st.info("Explainability analysis has already been run. Refresh the page to run again.") 
-            with st.spinner("Generating SHAP explainability plots.. Have Patience as it may take upto 30 minutes to load..."):
+            with st.spinner("Generating SHAP explainability plots... Have patience as it may take up to 30 minutes to load..."):
                 try:
                     results = run_explainability_pipeline()
+                    st.session_state.explainability_ran = True
+                    st.session_state.explainability_results = results
                     st.success("Explainability analysis completed successfully!")
-
-                    # Display Plots
-                    st.subheader("Global Feature Importance")
-                    st.image(results["bar_plot"], caption="SHAP Feature Importance (Bar Plot)")
-                    st.image(results["summary_plot"], caption="SHAP Summary Plot")
-
-                    st.subheader("Local Explanation (Sample #10)")
-                    st.image(results["force_plot"], caption="SHAP Force Plot")
-                    st.image(results["waterfall_plot"], caption="SHAP Waterfall Plot")
-
-                    st.subheader("Dependence Plots (Top Features)")
-                    for dep_path in results["dependence_plots"]:
-                        st.image(dep_path, caption=f"Dependence Plot: {dep_path.split('/')[-1]}")
-
                     logger.info("Explainability analysis executed successfully.")
                 except Exception as e:
                     st.error(f"Error in explainability analysis: {e}")
-                    logger.exception(f"Error in explainability analysis: {e}")               
+                    logger.exception(f"Error in explainability analysis: {e}")
+                    st.session_state.explainability_ran = False
+    
+    # Display results if analysis has been run
+    if st.session_state.explainability_ran and "explainability_results" in st.session_state:
+        results = st.session_state.explainability_results
+        
+        # Display Plots
+        st.subheader("Global Feature Importance")
+        st.image(results["bar_plot"], caption="SHAP Feature Importance (Bar Plot)")
+        st.image(results["summary_plot"], caption="SHAP Summary Plot")
+
+        st.subheader("Local Explanation (Sample #10)")
+        st.image(results["force_plot"], caption="SHAP Force Plot")
+        st.image(results["waterfall_plot"], caption="SHAP Waterfall Plot")
+
+        st.subheader("Dependence Plots (Top Features)")
+        for dep_path in results["dependence_plots"]:
+            st.image(dep_path, caption=f"Dependence Plot: {dep_path.split('/')[-1]}")
+        
+        # Add button to re-run analysis
+        st.divider()
+        if st.button("Re-run Analysis", type="secondary"):
+            st.session_state.explainability_ran = False
+            st.session_state.explainability_results = None
+            st.rerun()               
                 
 
 # PAGE 4: ABOUT SECTION
