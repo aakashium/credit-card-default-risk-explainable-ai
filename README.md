@@ -2,7 +2,7 @@
 
 A modular Machine Learning pipeline for predicting credit default risk with a focus on **Explainable AI (XAI)** using SHAP. This project includes data preprocessing, model training with **XGBoost**, and an interactive **Streamlit** dashboard.
 
-## 🚀 Features
+## Features
 
 *   **Modular Pipeline**: Clean separation of Data Preprocessing, Model Training, and Explainability.
 *   **Best Practices**: Structured logging, configuration management, and type hinting.
@@ -72,18 +72,7 @@ This will open a browser window where you can:
 *   Train the Model
 *   Generate SHAP Explanations
 
-### 2. Feature Engineering Experiments
-To run the advanced feature engineering and RFE experiments:
-
-```bash
-jupyter notebook notebooks/04_feature_engineering_experiment.ipynb
-```
-Or execute it directly via command line:
-```bash
-jupyter nbconvert --to notebook --execute notebooks/04_feature_engineering_experiment.ipynb
-```
-
-### 3. Docker
+### 2. Docker
 To run using Docker:
 
 ```bash
